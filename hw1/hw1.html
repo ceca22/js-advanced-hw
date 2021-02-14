@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">My Page</h1>
+    
+    <form action="" method="GET" style="text-align: center;">
+        <h2>Sign In</h2>
+        <br />
+        <label for="user-name" >Username</label>
+        <input type="text" id="user-name" required/>
+        <br />
+        <br />
+        <label for="pass">Password</label>
+        <input type="password" name="Pass" id="pass" required/>
+        <br />
+        <br />
+        <input type="radio" name="iAmAdminYes" id="adminYes" />
+        <label for="adminYes">I am Admin</label>
+        <br />
+        <br />
+        <button>Log In</button>
+    </form>
+
+    <form action="" method="GET" style="text-align: center;">
+        <h2>Register</h2>
+        <label for="user-name-reg">Username</label>
+        <input type="text" id="user-name-reg" required/>
+        <br />
+        <br />
+        <label for="pass-reg">Password</label>
+        <input type="password" name="Passwordd" id="pass-reg" required />
+        <br />
+        <br />
+        <input type="radio" id="admin" name="iAmAdmin"   value="yesAdmin" />
+        <label for="admin" >I am Admin</label>
+        <br />
+        <br />
+        <br />
+        <button>Sign Up</button>
+
+    </form>
+
+    <div style="text-align: center;">
+        <p id="list"></p>
+        <p id="currentUser"></p>
+        <button id="logOut">Log Out</button>
+        
+    </div>
+
+    
+
+    <script src="hw1.js"></script>
+</body>
+</html>
