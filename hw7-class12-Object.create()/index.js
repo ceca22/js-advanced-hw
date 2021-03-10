@@ -18,7 +18,8 @@ let animal =  {
     }
 }
 console.log('Animal', animal)
-animal.printAnimalDetails()
+animal.printAnimalDetails() 
+
 
 
 //aquaticcccccccccccccccc
@@ -81,3 +82,89 @@ domesticAnimal.price = "price"
 
 console.log('Domestic Animal', domesticAnimal)
     
+//ALTERNATIVE SOLUTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+console.log('------ALTERNATIVE SOLUTION------')
+
+
+let coala = {
+    name: "Coala Bear",
+    latinName: "Phascolarctos cinereus",
+    age: 10,
+    numberOfLegs: 4,
+    lifespan: '13-18 years',
+
+    printAnimalDetails: () => {
+        console.log(`
+        Animal kind: ${coala.name}(${coala.latinName})
+        Age: ${coala.age} years old
+        Number of Legs:${coala.numberOfLegs}
+        `)
+    }
+}
+
+console.log(coala);
+coala.printAnimalDetails()
+
+
+
+let dolphin = {
+    name: "Dolphin",
+    latinName: "Delphinidae",
+    age: 20,
+    numberOfLegs: 0,
+    lifespan: '40-60 years',
+
+    printAnimalDetails: () => {
+        console.log(`
+        Animal kind: ${dolphin.name}(${dolphin.latinName})
+        Age: ${dolphin.age} years old
+        Number of Legs:${dolphin.numberOfLegs}
+        `)
+    }
+}
+
+let dolphinAnimal = Object.create(dolphin)
+dolphin.printAnimalDetails()
+dolphinAnimal.type = "carnivore";
+dolphinAnimal.liveInSaltWater = true;
+dolphinAnimal.liveInFreshWater = false;
+
+console.log(dolphinAnimal)
+
+
+
+
+
+let horse = {
+    name: "Horse",
+    latinName: "Equus ferus caballus",
+    age: 12,
+    numberOfLegs: 4,
+    lifespan: '15-20 years',
+
+    printAnimalDetails: () => {
+        console.log(`
+        Animal kind: ${horse.name}(${horse.latinName})
+        Age: ${horse.age} years old
+        Number of Legs:${horse.numberOfLegs}
+        `)
+    }
+}
+let horseAnimal = Object.create(horse)
+horse.printAnimalDetails()
+
+horseAnimal.ownerName = "John"
+horseAnimal.favoriteToy = "Jolly Tug 14 Horse Ball"
+horseAnimal.hasOwner = true
+horseAnimal.price = 1600
+
+horseAnimal.ownerPrice = function() {
+    if(horseAnimal.hasOwner === true){
+        horseAnimal.price += 1000
+        console.log(`The ${horse.name} costs ${horseAnimal.price} dollars`)
+    }
+}
+
+horseAnimal.ownerPrice();
+console.log(horseAnimal)
+
