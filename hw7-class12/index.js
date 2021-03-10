@@ -177,7 +177,7 @@ console.log('Animal6:', animal6);
 animal6.printAnimalDetails();
 animal6.sound('squeak, growl, bark and huff')
 
-let animal61 = new WildAnimal('Siberian chipmunks', 'Eutamias sibiricus', 4, 4, '6-10', true, ' short, dense fur ', 'omnivore', 'seeds and fungi' )
+let animal61 = new WildAnimal('Siberian chipmunks', 'Eutamias sibiricus', 4, 4, '6-10 years', true, ' short, dense fur ', 'omnivore', 'seeds and fungi' )
 
 console.log(animal61)
 animal61.printAnimalDetails();
@@ -222,7 +222,7 @@ animal7.printAnimalDetails();
 animal7.sound('neigh')
 DomesticAnimal.ownerPrice(animal7)
 
-let animal8 = new DomesticAnimal('Samoyed', '', 3, 4, "10-13", true, 'long white fur', 'Stefan', 'plastic bottles', true, 200 )
+let animal8 = new DomesticAnimal('Samoyed', '', 3, 4, "10-13 years", true, 'long white fur', 'Stefan', 'plastic bottles', true, 200 )
 console.log(animal8);
 
 DomesticAnimal.ownerPrice(animal8)
