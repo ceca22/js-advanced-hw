@@ -8,7 +8,7 @@ let isAdminInput = document.getElementById('checkboxInput')
 
 let buttonRegister = document.querySelector('div').lastElementChild
 
-let resultParagraphReg = document.getElementById('resultNewReg')
+let listReg = document.getElementById('resultNewReg')
 
 
 
@@ -22,25 +22,31 @@ function newUser (username, password, isAdmin) {
 
 let newUsers = []
 
-// function printNewReg(listNewReg, element){
-//     for (const newReg of listNewReg){
-//         element.innerText += ` ${newReg.username}
-//         `
-//     }
-// }
+function printNewReg(listNewReg, element){
+    element.innerHTML += ` <h1>List of registered users!</h1>
+        `
+    for (const newReg of listNewReg){
+        
+        element.innerHTML += ` <li> ${newReg.username}  </li>
+        `
+    }
+}
 
 buttonRegister.addEventListener('click', () => {
     //debugger
     let usernameValue = usernameInput.value;
     let userPasswordValue = userPasswordInput.value;
-    let isAdminValue = isAdminInput.value
+    let isAdminValue = isAdminInput.checked
 
 
 
     if(usernameValue.length > 3 && userPasswordValue.length > 6) {
+        
         let newRegister = new newUser(usernameValue, userPasswordValue, isAdminValue)
         newUsers.push(newRegister)
         console.log(newUsers)
+        
+        
 
     } else {
         alert('Username should be longer than 3 characters and Password should be longer than 6!');
@@ -67,20 +73,28 @@ buttonLogIn.addEventListener('click', () => {
 
 
     for ( const user of newUsers){
-        if ( usernameLogInValue === user.username && passwordLogInValue === user.password) {
+        if (usernameLogInValue === user.username && passwordLogInValue === user.password && user.isAdmin === true) {
+            currentUser = user
+            alert(`Welcome to Your Page Admin ${user.username}!`)
+            console.log(newUsers)
+            printNewReg(newUsers, listReg)
+            
+        } else if ( usernameLogInValue === user.username && passwordLogInValue === user.password) {
             console.log(user.username)
             alert(`Welcome to Your Page ${user.username}!`)
             currentUser = user
             console.log(currentUser)
             currentUserDiv.innerHTML = ` <p>Current user: ${user.username} </p>
              `
-           
 
-        } else 
+        }  
             continue
 
-
        
+    }
+
+    if(Object.keys(currentUser).length === 0){
+        alert('There is no such user')
     }
     
     usernameLogIn.value = ""
@@ -95,7 +109,7 @@ logOutButton.addEventListener('click', () => {
     
     if ( Object.keys(currentUser).length !== 0) {
         currentUser = {};
-        console.log(currentUser)
-        currentUserDiv.innerHTML = 'No current user'
+        console.log('Current user:', currentUser)
+        currentUserDiv.innerHTML = '<h1>No current user</h1>'
     }
 })
