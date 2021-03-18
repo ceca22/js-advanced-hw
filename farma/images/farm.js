@@ -269,14 +269,14 @@ clearButton.addEventListener('click', () => {
 
 
 
-let deleteButton = document.getElementsByClassName('deleteBtn');
+// let deleteButton = document.getElementsByClassName('deleteBtn');
 
-for(let i=0; i < deleteButton.length; i++){
-    debugger
-    deleteButton[i].addEventListener('click', function(event){
-        event.target.parentNode.parentNode.remove(event.parentNode);
-    }, false);
-}
+// for(let i=0; i < deleteButton.length; i++){
+//     debugger
+//     deleteButton[i].addEventListener('click', function(event){
+//         event.target.parentNode.parentNode.remove(event.parentNode);
+//     }, false);
+// }
  
 
 
