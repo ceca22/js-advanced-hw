@@ -63,25 +63,29 @@ class CattleAnimal extends FarmAnimal {
         
     }
     static milkTheCows(obj) {
-        //debugger;
-        if(obj.weight >= 900){
-            
-            productList.innerHTML += `<li> <img src="images/milk bucket.jpg" alt="bucket of milk" width="100"> </li>
-            <li><img src="images/milk bucket.jpg" alt="bucket of milk" width="100"></li>
-            <hr color='pink' />`
-            obj.bucketMilk += 2;
-            obj.weight -= 50;
-            infoAboutAnimals.innerHTML += `
-            <li> The ${obj.typeOfAnimal} now weights ${obj.weight} kg </li>`
-            
+        debugger;
+        
+            for(let i=0; i < obj.quantity; i++){
+                if(obj.insideTheFarm){
+                    if(obj.weight >= 900){
+                        productList.innerHTML += `<li> <img src="images/milk bucket.jpg" alt="bucket of milk" width="100"> </li>
+                        <li><img src="images/milk bucket.jpg" alt="bucket of milk" width="100"></li>
+                        <hr color='pink' />`
+                        infoAboutAnimals.innerHTML += `
+                        <li> The ${obj.typeOfAnimal} now weights ${obj.weight} kg  </li>`
+                } else {
+                    infoAboutAnimals.innerHTML += `<p>Your cattle (${obj.typeOfAnimal}) has not been fed enough and is too week to be milked! </p>`
+                }} else {
+                    infoAboutAnimals.innerHTML += `<p>You can't milk the cattle when it's outside the farm! </p>`
+                }
+            }
 
-        } else {
-            infoAboutAnimals.innerHTML += `<p>Your cattle (${obj.typeOfAnimal}) has not been fed enough and is too week to be milked! </p>`
-        }
-        
-        infoAboutAnimals.innerHTML += '<hr color="pink" />'
-        
-        
+            if(obj.weight >= 900) {
+                obj.bucketMilk +=(obj.quantity)* 2;
+                obj.weight -= 50;
+               
+                
+            }     
     }
 
 }
@@ -184,7 +188,7 @@ function feedTheAnimals(animalArray, result) {
 
 function productCountdown(cattleArray,result){
     let countdown = 0;
-    cattleArray.map(cattle => {
+        cattleArray.map(cattle => {
         countdown += cattle.bucketMilk
         return console.log(countdown)
     })
@@ -222,22 +226,13 @@ if(dutyValue === 'info'){
         return releaseTheAnimal(horseArray, divAnimal, horseImage, infoAboutAnimals)
 
     } else if(dutyValue === "milk") {
-        cattleArray.map(cattle => {
-            if(cattle.insideTheFarm) {
-                CattleAnimal.milkTheCows(angusCattle)
-                CattleAnimal.milkTheCows(beltedGalloway)
-                CattleAnimal.milkTheCows(charolais)
-                CattleAnimal.milkTheCows(hereford)
-                productCountdown(cattleArray, bucketMilkCattle)
-            } else {    
-                infoAboutAnimals.innerHTML += `<li style=color:red>You can't milk the cattle when it is outside!</li>`
-                infoAboutAnimals.innerHTML += `<hr color='red' />`
-
-            }
-        })
-        
+        CattleAnimal.milkTheCows(angusCattle)
+        CattleAnimal.milkTheCows(beltedGalloway)
+        CattleAnimal.milkTheCows(charolais)
+        CattleAnimal.milkTheCows(hereford)
+        productCountdown(cattleArray, bucketMilkCattle)
         return
-    } else if(dutyValue === 'feed'){
+        }  else if(dutyValue === 'feed'){
         if(farmAnimalValue === 'Cattle')
         return feedTheAnimals(cattleArray, infoAboutAnimals)
         else if(farmAnimalValue === 'Horse')
@@ -249,11 +244,6 @@ if(dutyValue === 'info'){
         } else if(farmAnimalValue === 'Horse')
             delete horseImage
         }
-    
-
-
-
-
 
 
 })
