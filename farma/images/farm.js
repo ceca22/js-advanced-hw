@@ -1,9 +1,7 @@
-//click the farm house to release the animals
-//click on the cow to milk it
-//the farmer will have duties-release the animals, give food to the animals
-//ke ima input za animals quantity zacuvani vo varijabla
+
+
 //so fetch ke zemame luge koi sakat da kupat mleko, kojn, jajca
-//imam prashanje za return vo if statements
+
 let divAnimal =document.getElementById('animal');
 
 let cattleArray = [];
