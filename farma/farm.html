@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="images/farm.css">
+   
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="farm">
+        <h1>Welcome to Orchidea's farm!</h1>
+        <img src="images/farmmmm.jpg" alt="farm house" width="500px" id="farmHouse" />
+        </div>
+        
+    </div>
+
+    <div id="animals">
+        
+        <img src="images/cow.jpg" alt="cow" width="100"  class="imageFarm"   />
+        <img src="images/pig1.png" alt="pig" width="100"  class="imageFarm"   />
+        <img src="images/sheep1.jpg" alt="sheep" width="75"   class="imageFarm"   />
+        <img src="images/horse1.jpg" alt="horse1" width="100"  class="imageFarm"   />
+        <img src="images/chicken.jpg" alt="chicken" width="50"   class="imageFarm"   />
+        <img src="images/goat.jpg" alt="goat" width="100"    class="imageFarm"   />
+        <img src="images/farmer woman.jpg" alt="woman" width="100"   class="imageFarm"   />
+        
+    </div  >
+   
+
+   <div id="dutiesOfTheFarmer">
+    <!-- <button id="releaseAnimals">Release Animals from the farm</button>
+    <button id="feed">Feed the Animals</button> -->
+
+    <select id="duties">
+        <option value="">--Farmer's Duties--</option>
+        <option value="info">Information about the stock (choose Animal)</option>
+        
+        <option value="feed">Feed the (choose Animal)</option>
+        <option value="milk">Milk The Cow</option>
+        <option value="release">Release the (choose Animal)</option>
+        <option value="bringBack">Bring Back the (animal) in the Farm</option>
+        
+    </select>
+    <select id="typeOfAnimal">
+        <option value="">--Farm Animal--</option>
+        <option value="Cattle">Cattle</option>
+        <option value="Horse">Horse</option>
+        <!-- <option value="release">Release the Cattle</option>
+        <option value="bringBack">Bring Back the Cattle in the Farm</option>
+        <option value="feed">Feed the Animal</option>
+        <option value="milk">Milk The Cow</option> -->
+        
+    </select>
+    <button class="btn btn-danger" id="submitButton"> Submit</button>
+
+    </div>
+    <div id="animalResult" >
+        <h3 class="headerThree">Daily Activity</h3>
+        <h3 class="header3">Animals outside of the farm</h3>
+        <div id="release">
+            <div id="animal">
+
+            </div>
+        
+        </div>
+        <div >
+            <ol id="infoAboutAnimals"> 
+                
+            </ol>
+        </div>
+        <div class="clearDiv">
+            <button class="btn btn-info" id="clearButton">Clear notification Panel</button>
+        </div>
+        <div class="headerDiv">
+            <h3 class="headerThree">Potential Buyers</h3>
+            <h3 class="header3">Products:</h3>
+        </div>
+        
+        <div id="potentialBuyer">
+
+        </div>
+        <div id="product">
+            <ol id='productList'>
+                
+            </ol>
+            
+        </div>
+        <div id='total'>
+            <h6 class='total'>Total of Milk Buckets:</h6>
+            <h6 id='bucketMilk'></h5>
+            <h6 class='total'>Total of Eggs:</h6>
+            <h6  id='eggCount'></h6>
+        </div>
+
+        
+
+    </div>
+
+    
+    
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="images/farm.js"></script>
+    
+</body>
+</html>
