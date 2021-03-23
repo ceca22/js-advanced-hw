@@ -429,16 +429,15 @@ function newPlayer (name, score){
 
 function time () {
     setTimeout(() => {
-
+        debugger;
         newPlayer(newPlayerName, money)
         players.sort((player1, player2) => player2.score - player1.score)
         console.log(players)
-        body.innerHTML = '';
 
         for(let i = 0; i< players.length; i++){
             alert( `${players[i].name} scored ${[i+1]} place with ${players[i].score}`)
         }
-    },60000);
+    },40000);
 }
 
 
