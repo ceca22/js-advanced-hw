@@ -32,8 +32,7 @@
    
 
    <div id="dutiesOfTheFarmer">
-    <!-- <button id="releaseAnimals">Release Animals from the farm</button>
-    <button id="feed">Feed the Animals</button> -->
+    <button class="btn btn-success" id='start' >Start</button>
 
     <select id="duties">
         <option value="">--Farmer's Duties--</option>
@@ -41,18 +40,17 @@
         
         <option value="feed">Feed the (choose Animal)</option>
         <option value="milk">Milk The Cow</option>
+        <option value="collect">Collect the Eggs</option>
         <option value="release">Release the (choose Animal)</option>
-        <option value="bringBack">Bring Back the (animal) in the Farm</option>
+        <option value="bringBack">Bring Back all the animals in the Farm</option>
         
     </select>
     <select id="typeOfAnimal">
         <option value="">--Farm Animal--</option>
         <option value="Cattle">Cattle</option>
         <option value="Horse">Horse</option>
-        <!-- <option value="release">Release the Cattle</option>
-        <option value="bringBack">Bring Back the Cattle in the Farm</option>
-        <option value="feed">Feed the Animal</option>
-        <option value="milk">Milk The Cow</option> -->
+        <option value="Chicken">Chicken</option>
+       
         
     </select>
     <button class="btn btn-danger" id="submitButton"> Submit</button>
@@ -80,9 +78,18 @@
             <h3 class="header3">Products:</h3>
         </div>
         
-        <div id="potentialBuyer">
+        <div id="potentialBuyers">
+            <ol id="potentialBuyer">
+                
 
+
+            </ol>
+            <ol id='potentialBuyer2'>
+                
+            </ol>
+            
         </div>
+       
         <div id="product">
             <ol id='productList'>
                 
@@ -94,6 +101,14 @@
             <h6 id='bucketMilk'></h5>
             <h6 class='total'>Total of Eggs:</h6>
             <h6  id='eggCount'></h6>
+        </div>
+        <div id='buyerButton'>
+            <button  id="sellBtn" class="btn btn-info">Sell products</button>
+            <button id="buyersBtn" class="btn btn-info">Check requests</button>
+            <div id='moneyEarned'>
+                <h6 id="balance">MONEY BALANCE:</h6>
+                <h6 id='moneyCount'></h6>
+            </div>
         </div>
 
         
