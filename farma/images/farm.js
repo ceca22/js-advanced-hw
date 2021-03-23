@@ -437,7 +437,7 @@ function time () {
         for(let i = 0; i< players.length; i++){
             alert( `${players[i].name} scored ${[i+1]} place with ${players[i].score}`)
         }
-    },40000);
+    },60000);
 }
 
 
