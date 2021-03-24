@@ -334,7 +334,7 @@ buyerBtn.addEventListener('click', () => {
         debugger
         randomNumber = Math.floor(Math.random() * 10);
         numberNumber = randomNumber
-        secondNumber = numberNumber+1
+        let secondNumber = numberNumber+1
     
         randomNumberEggs = Math.floor(Math.random() * 50)
         potentialBuyer.innerHTML = `<li> ${response[numberNumber].name} wants to buy ${randomNumberEggs} eggs.</li>`
