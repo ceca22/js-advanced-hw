@@ -324,7 +324,7 @@ function bringBackInTheFarm(animalArray){
 
 
 //check buyer button
-let i
+let numberNumber
 let randomNumberEggs
 
 buyerBtn.addEventListener('click', () => {
@@ -333,11 +333,12 @@ buyerBtn.addEventListener('click', () => {
     .then(response => {
         debugger
         randomNumber = Math.floor(Math.random() * 10);
-        i = randomNumber
+        numberNumber = randomNumber
+        secondNumber = numberNumber+1
     
         randomNumberEggs = Math.floor(Math.random() * 50)
-        potentialBuyer.innerHTML = `<li> ${response[i].name} wants to buy ${randomNumberEggs} eggs.</li>`
-        potentialBuyer2.innerHTML = `<li> ${response[i+1].name} wants to buy ${randomNumber} buckets of milk.</li>`
+        potentialBuyer.innerHTML = `<li> ${response[numberNumber].name} wants to buy ${randomNumberEggs} eggs.</li>`
+        potentialBuyer2.innerHTML = `<li> ${response[secondNumber].name} wants to buy ${randomNumber} buckets of milk.</li>`
     })
     }     
     )
@@ -363,7 +364,7 @@ sellBtn.addEventListener('click', () => {
     } else if (randomNumber > totalMilkCountdown || randomNumber === undefined || totalMilkCountdown === undefined){
         return alert("You don't have enough milk")
     } else {
-        //debugger
+        debugger
         totalEggCountdown -= randomNumberEggs
         totalMilkCountdown -= randomNumber 
         bucketMilkCattle.innerText = totalMilkCountdown
@@ -382,7 +383,7 @@ sellBtn.addEventListener('click', () => {
         for(let i=0; i < totalEggCountdown; i++){
             productList.innerHTML += `<li> <img src="images/egg.jpg" alt="sheep" width="75"   class="imageFarm"   /> </li>`
         }
-        //debugger;
+        debugger;
         eggMoney = randomNumberEggs * 2
         milkMoney = randomNumber * 40
         totalEarned = eggMoney + milkMoney
