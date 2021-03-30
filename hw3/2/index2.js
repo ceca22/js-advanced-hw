@@ -66,16 +66,16 @@ function fibonacci(num) {
 }
 
 
-const takeInput = prompt('Enter the number of terms: ');
+//const takeInput = prompt('Enter the number of terms: ');
 
-if(takeInput <=0) {
-    console.log('Enter a positive integer.');
-}
-else {
-    for(let i = 0; i < takeInput; i++) {
-        console.log(fibonacci(i));
-    }
-}
+// if(takeInput <=0) {
+//     console.log('Enter a positive integer.');
+// }
+// else {
+//     for(let i = 0; i < takeInput; i++) {
+//         console.log(fibonacci(i));
+//     }
+// }
 
 
 //bonus table
@@ -104,10 +104,11 @@ createTable.addEventListener('click', () => {
         
         tableElement.innerHTML += `<tr> ${i} </tr>` 
         
-        for (let i=0; i < inputColumns.value; i++){
-            tableElement.innerHTML += `<td> ${i} </td>`
+        for (let j=0; j < inputColumns.value; j++){
+            tableElement.innerHTML += `<td> ${j} </td>`
         }
     }
+
 //Zoshto koga mi se printa kodot vo vtoriot loop se printa i kodot od prviot loop?
 //rezultatot od ova  dokolku row e 2, columns 2
 // <tr> </tr>
@@ -123,57 +124,77 @@ createTable.addEventListener('click', () => {
 
 //calculator exercise
 
-// let button1 = document.getElementById('button1');
-// let button2 = document.getElementById('button2');
-// let button3 = document.getElementById('button3');
-// let button4 = document.getElementById('button4');
-// let button5 = document.getElementById('button5');
-// let button6 = document.getElementById('button6');
-// let button7 = document.getElementById('button7');
-// let button8 = document.getElementById('button8');
-// let button9 = document.getElementById('button9');
-// let button0 = document.getElementById('button0');
-
-// let buttonSubtract = document.getElementById('buttonSubtract');
-
-// let buttonMultiply = document.getElementById('buttonMultiply');
-
-// let buttonDivide = document.getElementById('buttonDivide');
-
-// let buttonSum = document.getElementById('buttonSum');
-
-// let buttonDot = document.getElementById('buttonDot');
-
-// let buttonEqualsTo = document.getElementById('buttonEqualsTo');
+let button1 = document.getElementById('button1');
+let button2 = document.getElementById('button2');
+let button3 = document.getElementById('button3');
+let button4 = document.getElementById('button4');
+let button5 = document.getElementById('button5');
+let button6 = document.getElementById('button6');
+let button7 = document.getElementById('button7');
+let button8 = document.getElementById('button8');
+let button9 = document.getElementById('button9');
+let button0 = document.getElementById('button0');
 
 
-// let deleteButton = document.getElementById('deleteOneNumber');
-// let deleteInput = document.getElementById('deleteInput');
+let one = 1
+let two = 2
+let three = 3
+let four = 4
+let five = 5
+let six = 6
+let seven = 7
+let eight = 8
+let nine = 9
+let zero = 0
 
 
-// let showOperation = document.getElementById('operation');
-// let calculateTheInput = document.getElementById('calculate');
 
-// button1.addEventListener('click', () => {
-     
-//     showOperation.innerText += parseInt(1)  
-// })
 
-// buttonSum.addEventListener('click', () => {
+let buttonSubtract = document.getElementById('buttonSubtract');
+
+let buttonMultiply = document.getElementById('buttonMultiply');
+
+let buttonDivide = document.getElementById('buttonDivide');
+
+let buttonSum = document.getElementById('buttonSum');
+
+let buttonDot = document.getElementById('buttonDot');
+
+let buttonEqualsTo = document.getElementById('buttonEqualsTo');
+
+
+let deleteButton = document.getElementById('deleteOneNumber');
+let deleteInput = document.getElementById('deleteInput');
+
+
+let showOperation = document.getElementById('operation');
+let calculateTheInput = document.getElementById('calculate');
+
+let input1
+button1.addEventListener('click', () => {
+    debugger
+    showOperation.innerText += one 
+    input1 = one
+})
+
+
+let sum = false;
+buttonSum.addEventListener('click', () => {
     
-//     showOperation.innerText += '+'
-// })
-
-// buttonEqualsTo.addEventListener('click', () => {
-//     let result = showOperation
-//     calculateTheInput.innerText =result;
-//     console.log(showOperation)
+    sum = true;
+})
+let resultOfCalculator = 0
+buttonEqualsTo.addEventListener('click', () => {
+    if (sum === true) {
+        resultOfCalculator += input1
+        showOperation.innerText = resultOfCalculator
+    }
     
-// })
+})
 
-// deleteInput.addEventListener('click', () => {
-//     showOperation.innerText = "";
-// })
+deleteInput.addEventListener('click', () => {
+    showOperation.innerText = "";
+})
 
 
 
